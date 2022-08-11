@@ -42,6 +42,8 @@ class ItemsRepository(BaseRepository):  # noqa: WPS214
         image: Optional[str] = None,
         tags: Optional[Sequence[str]] = None,
     ) -> Item:
+        if image == "" or image is None:
+            image = "../../../frontend/public/placeholder.png"
         async with self.connection.transaction():
             item_row = await queries.create_new_item(
                 self.connection,
