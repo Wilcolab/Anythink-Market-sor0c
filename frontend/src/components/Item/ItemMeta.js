@@ -11,7 +11,6 @@ const ItemMeta = (props) => {
           src={item.seller.image}
           alt={item.seller.username}
           className="user-pic mr-2"
-          onError={(event) => event.target.src = '../../public/placeholder.png' }
         />
       </Link>
 
